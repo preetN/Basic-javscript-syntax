@@ -237,29 +237,179 @@
 // Challenge
 // Create a function that takes food name and expiry date and return like xyz is expired for this much days left for expiry
 
-const CheckExpiry = ({ name, expire }) => {
-  const dt = Date.now();
-  const obj = new Date(expire);
-  const exp = obj.getTime();
-  const dtd = new Date();
-  let s = obj.getDate() - dtd.getDate();
-  if (exp > dt) {
-    console.log(
-      name.toUpperCase() + " is fresh and will expire in " + s + " days"
-    );
-  } else if (s === 0) {
-    console.log(name.toUpperCase() + " is expiring today");
-  } else {
-    console.log(name.toUpperCase() + " is expired " + -s + " days ago");
-  }
-};
-const fish = {
-  name: "tuna fish",
-  expire: "2023-07-05",
-};
-const milk = {
-  name: "Can Milk",
-  expire: "2023-07-15",
-};
-CheckExpiry(fish);
-CheckExpiry(milk);
+// const CheckExpiry = ({ name, expire }) => {
+//   const dt = Date.now();
+//   const obj = new Date(expire);
+//   const exp = obj.getTime();
+//   const dtd = new Date();
+//   let s = obj.getDate() - dtd.getDate();
+//   if (exp > dt) {
+//     console.log(
+//       name.toUpperCase() + " is fresh and will expire in " + s + " days"
+//     );
+//   } else if (s === 0) {
+//     console.log(name.toUpperCase() + " is expiring today");
+//   } else {
+//     console.log(name.toUpperCase() + " is expired " + -s + " days ago");
+//   }
+// };
+// const fish = {
+//   name: "tuna fish",
+//   expire: "2023-07-05",
+// };
+// const milk = {
+//   name: "Can Milk",
+//   expire: "2023-07-15",
+// };
+// CheckExpiry(fish);
+// CheckExpiry(milk);
+// const person = (name, add) => {
+//   return {
+//     personName: name,
+//     address: add,
+//     bio() {
+//       return `hey, this person name is ${this.personName}`;
+//     },
+//     location() {
+//       return `he lives in ${this.address}`;
+//     },
+//     toUpper() {
+//       this.personName = this.personName.toUpperCase();
+//       return this.personName;
+//     },
+//   };
+// };
+// const obj1 = person("prem", "sydney");
+// console.log(obj1.bio());
+// console.log(obj1.toUpper());
+// console.log(obj1.bio());
+//Class
+// class Person {
+//   #key;
+//   constructor(obj) {
+//     this.name = obj.name;
+//     this.add = obj.add;
+//     this.#key = "dfekjnfjerfjer3273";
+//   }
+//   bio() {
+//     return `Hey this person name is ${this.name}.`;
+//   }
+//   location() {
+//     return `He lives in ${this.add}`;
+//   }
+//   #callApi() {
+//     return "aPi key is => " + this.#key;
+//   }
+//   finddata() {
+//     ////
+//     return "Data from api " + this.#callApi();
+//   }
+// }
+// const probj = {
+//   name: "prem",
+//   add: "syd",
+//   pet: "monkey",
+// };
+// const obj = new Person(probj);
+// obj.phone = 2982;
+
+// console.log(obj.bio());
+// class LivingObj {
+//   constructor(name, dob, isMamal) {
+//     this.name = name;
+//     this.dob = dob;
+//     this.isMamal = isMamal;
+//   }
+//   bio() {
+//     return `The animal is called ${this.name}, was born on ${this.dob} and thier mamal status is ${this.isMamal}`;
+//   }
+// }
+// const cat = new LivingObj("whisper", "2020-02-10", "yes");
+// console.log(cat.bio());
+// class Human extends LivingObj {
+//   constructor(name, dob, isMamal) {
+//     super(name, dob, isMamal);
+//   }
+//   speak() {
+//     return ` ${this.bio()} and they speak as well`;
+//   }
+// }
+// class Animal extends LivingObj {
+//   constructor(name, dob, isMamal, owner) {
+//     super(name, dob, isMamal);
+//     this.owner = owner;
+//   }
+//   owneris() {
+//     return `${this.bio()} and belongs to ${this.owner}`;
+//   }
+// }
+// const permobj = new Human("prem", "20-20-20", "yes");
+// console.log(permobj.speak());
+// const cat = new Animal("whisper", "20-10-10", "not", "justin");
+// console.log(cat.owneris());
+// var date1 = new Date("2020-07-6");
+// var date2 = new Date();
+// console.log(date1 + ".//////////////////. " + date2);
+// console.log(
+//   "numberof years to date: " + (date2.getFullYear() - date1.getFullYear())
+// );
+// console.log("number of months: " + (date2.getMonth() - date1.getMonth()));
+// console.log("number of days: " + (date2.getDate() - date1.getDate()));
+
+// Functions
+// Pure functions
+// let total = 0;
+// const add = (a, b) => {
+//   return a + b;
+// };
+// console.log(add(5, 6));
+//High order function\
+// const addandsquare = (a, b) => {
+//   const total = a + b;
+//   console.log(total);
+//   return (multiplier) => {
+//     return total ** multiplier;
+//   };
+// };
+// const add = (a, b) => {
+//   return a + b;
+// };
+// const sub = (a, b) => [a - b];
+// const calc = (a, b, func) => {
+//   return func(a, b);
+// };
+
+// const result = calc(2, 3, addandsquare);
+// console.log(result(2));
+//Recursion
+// let i = 0;
+// var num = 0;
+// const total = (money) => {
+//   num = num + money.pop();
+//   console.log(money);
+//   if (money.length === 0) {
+//     return num;
+//   }
+//   return total(money);
+// };
+// const money = [34546, 34356, 434, 234678, 4356];
+// const a = total(money);
+// console.log(a);
+// const milarg = Array(11400).fill(1);
+
+// console.log(milarg);
+// console.time("reduce");
+// milarg.reduce((a, i) => a + i, 0);
+// console.timeEnd("reduce");
+
+// console.time("recursive");
+// let tl = 0;
+// const ttl = (arg) => {
+//   tl += arg.pop();
+//   if (arg.length === 0) {
+//     return tl;
+//   }
+//   return ttl(arg);
+// };
+// console.log(ttl(milarg));
+// console.timeEnd("recursive");
